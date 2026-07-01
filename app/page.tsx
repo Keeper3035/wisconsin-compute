@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowRight, Mic2, BarChart3 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import CalendlyModal from "@/components/CalendlyModal";
 
 const WisconsinMap = dynamic(() => import("@/components/WisconsinMap"), {
@@ -14,25 +14,6 @@ const WisconsinMap = dynamic(() => import("@/components/WisconsinMap"), {
     </div>
   ),
 });
-
-const keynotes = [
-  {
-    icon: BarChart3,
-    title: "The Rust Belt to the AI Belt",
-    focus: "Regional economic windfalls, utility grid load management, and physical supply chains.",
-    description:
-      "An executive-level analysis of how Wisconsin is absorbing a generational wave of compute infrastructure capital — examining fiscal multiplier effects on local economies, stress placed on legacy utility grids, and the logistical supply chains feeding these campuses from specialized cooling equipment to fiber backbone build-outs.",
-    tags: ["Economic Development", "Grid Infrastructure", "Supply Chain"],
-  },
-  {
-    icon: Mic2,
-    title: "Enterprise Agentic Readiness",
-    focus: "Re-architecting mid-market internal data structures for autonomous AI integration.",
-    description:
-      "A practical framework for enterprise and mid-market leadership teams navigating the shift to agentic AI — mapping internal data architecture decisions that determine whether an organization can deploy autonomous systems effectively, covering data governance, retrieval pipelines, internal API surface area, and the organizational structures that accelerate or block adoption.",
-    tags: ["Enterprise AI", "Data Architecture", "Organizational Strategy"],
-  },
-];
 
 export default function HomePage() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -173,74 +154,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Keynotes ─────────────────────────────────────────────────────── */}
-      <section id="keynotes" className="border-b border-slate-800/60">
-        <div className="max-w-6xl mx-auto px-6 py-20">
-          <div className="mb-12">
-            <p className="text-[10px] font-bold tracking-[0.28em] uppercase text-cyan-400 mb-3">
-              Keynote Speaking
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-50 tracking-tight">
-              Speaking Topics
-            </h2>
-            <p className="mt-3 text-sm text-slate-400 max-w-xl">
-              Executive-caliber presentations for industry conferences, board
-              retreats, and corporate summit programming.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {keynotes.map((keynote, i) => {
-              const Icon = keynote.icon;
-              return (
-                <div
-                  key={i}
-                  className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-lg p-8 flex flex-col gap-5 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/5 transition-all duration-300"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-navy-800 rounded flex items-center justify-center flex-shrink-0 border border-slate-800/60">
-                      <Icon className="w-5 h-5 text-cyan-400" />
-                    </div>
-                    <p className="text-[10px] font-bold text-slate-500 tracking-[0.22em] uppercase">
-                      Keynote Abstract
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-50 leading-snug">
-                      &ldquo;{keynote.title}&rdquo;
-                    </h3>
-                    <p className="mt-1 text-xs text-slate-500 font-medium">
-                      Focus: {keynote.focus}
-                    </p>
-                  </div>
-                  <p className="text-sm text-slate-400 leading-relaxed">
-                    {keynote.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
-                    {keynote.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-semibold text-slate-500 bg-navy-800 px-2.5 py-1 rounded tracking-wide border border-slate-800/60"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <Link
-                    href="/contact"
-                    className="mt-auto inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
-                  >
-                    Inquire About Booking
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Bottom CTA ───────────────────────────────────────────────────── */}
+{/* ── Bottom CTA ───────────────────────────────────────────────────── */}
       <section className="bg-navy-950">
         <div className="max-w-6xl mx-auto px-6 py-20 text-center">
           <p className="text-[10px] font-bold tracking-[0.28em] uppercase text-cyan-400 mb-4">
