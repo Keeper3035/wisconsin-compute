@@ -73,16 +73,9 @@ export default function HomePage() {
               onClick={() => setBookingOpen(true)}
               className="inline-flex items-center gap-2 bg-cyan-500 text-slate-950 text-xs font-bold tracking-wider uppercase px-6 py-3 rounded hover:bg-cyan-400 transition-colors"
             >
-              Schedule Private Briefing
+              Schedule Introductory Call
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
-            {/* Secondary CTA — ghost */}
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 border border-slate-700 text-slate-300 text-xs font-semibold tracking-wider uppercase px-6 py-3 rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors"
-            >
-              Review Keynote Abstracts
-            </Link>
           </div>
         </div>
       </section>
